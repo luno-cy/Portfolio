@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-    --color-background: #0f0f0f;
-    --color-background-light: #1a1a1a;
-    --color-text-primary: #e8e8e8;
-    --color-text-secondary: #b0b0b0;
-    --color-accent: #00d9ff;
-    --color-accent-dark: #00a8cc;
-    --color-card-bg: #1f1f1f;
-    --color-border: #2a2a2a;
-    --color-button-hover: #00b8e6;
+    --color-background: #0a0e27;
+    --color-background-light: #111633;
+    --color-text-primary: #f0f4ff;
+    --color-text-secondary: #b8c5d6;
+    --color-accent: #ff4444;
+    --color-accent-dark: #cc3333;
+    --color-card-bg: #0f1429;
+    --color-border: #1a2342;
+    --color-button-hover: #ff5555;
 
-    --color-sys: #ff6b6b;
-    --color-sys-light: #ff8787;
-    --color-net: #4ecdc4;
-    --color-net-light: #64d9dd;
-    --color-bdd: #45b7d1;
-    --color-bdd-light: #64c9e0;
+    --color-sys: #ff4444;
+    --color-sys-light: #ff6666;
+    --color-net: #2ecc71;
+    --color-net-light: #45d97a;
+    --color-bdd: #f39c12;
+    --color-bdd-light: #f5af42;
 }
 
 * {
@@ -33,8 +33,8 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-background);
     background-image: 
-        linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(0, 0, 0, 0) 50%),
-        linear-gradient(45deg, rgba(78, 205, 196, 0.02) 0%, rgba(0, 0, 0, 0) 50%);
+        linear-gradient(135deg, rgba(255, 68, 68, 0.05) 0%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(45deg, rgba(46, 204, 113, 0.03) 0%, rgba(0, 0, 0, 0) 50%);
     color: var(--color-text-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -67,6 +67,9 @@ h2 {
     position: relative;
     display: inline-block;
     padding-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 h2::after {
@@ -76,7 +79,7 @@ h2::after {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-net), transparent);
+    background: linear-gradient(90deg, var(--color-accent), transparent);
     border-radius: 2px;
 }
 
@@ -91,12 +94,12 @@ h4 {
 }
 
 .hero-section {
-    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(78, 205, 196, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 68, 68, 0.08) 0%, rgba(46, 204, 113, 0.05) 100%);
     padding: 120px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
 }
 
 .hero-section::before {
@@ -107,8 +110,8 @@ h4 {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(255, 68, 68, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(46, 204, 113, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -126,6 +129,8 @@ h4 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: slideInDown 0.8s ease-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-section h2 {
@@ -248,11 +253,11 @@ h4 {
 }
 
 .skill-category {
-    background: linear-gradient(135deg, var(--color-card-bg) 0%, rgba(31, 31, 31, 0.8) 100%);
+    background: linear-gradient(135deg, var(--color-card-bg) 0%, rgba(15, 20, 41, 0.8) 100%);
     padding: 35px;
     border-radius: 12px;
     text-align: left;
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
@@ -269,6 +274,7 @@ h4 {
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s ease-out;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
 }
 
 .skill-category:hover {
