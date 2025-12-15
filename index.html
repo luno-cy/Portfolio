@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erwan CADOREL - Portfolio Cybersécurité</title>
+    <link rel="stylesheet" href="Portfoli_Erwan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1>Erwan CADOREL</h1>
+            <h2>Étudiant en 1ʳᵉ Année Cybersécurité - École 89</h2>
+            <p>
+                <strong>Futur professionnel de la Cybersécurité,</strong> je recherche un <strong>Stage</strong> ou une
+                <strong>Alternance</strong> pour appliquer mes compétences en défense des systèmes d'information. Mon
+                expérience se
+                concentre sur l'administration système sécurisée, la segmentation réseau et la protection des bases de
+                données.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:erwan.cadorel@edu.ecole-89.com" class="button"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank"
+                    class="button secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h3><i class="fas fa-tools"></i> Compétences Techniques Clés</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Système & OS</h4>
+                    <ul>
+                        <li>Linux (Debian, Ubuntu)</li>
+                        <li>Windows Server</li>
+                        <li>Virtualisation (VMware, VirtualBox)</li>
+                        <li>Scripting Shell (Bash)</li>
+                        <li>Hardening</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Réseau & Sécurité</h4>
+                    <ul>
+                        <li>Modèles OSI/TCP-IP</li>
+                        <li>Segmentation réseau</li>
+                        <li>Pare-feu (pfSense, UFW)</li>
+                        <li>VPN</li>
+                        <li>Audit Réseau (Nmap)</li>
+                        <li>Plan d'adressage IP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Base de Données</h4>
+                    <ul>
+                        <li>PostgreSQL, SQL</li>
+                        <li>Docker</li>
+                        <li>Row Level Security (RLS)</li>
+                        <li>RBAC (Contrôle d'Accès par Rôles)</li>
+                        <li>Chiffrement (`pgcrypto`)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2><i class="fas fa-tasks"></i> Mes Projets Techniques</h2>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3><span class="tag sys">SYS11</span> Audit et Surveillance Active des Systèmes</h3>
+                </div>
+                <p>Ce projet visait à maîtriser le cycle de vie de la gestion des vulnérabilités. J'ai configuré une VM
+                    Linux vulnérable, puis développé des outils de sécurité pour identifier et analyser ces menaces.</p>
+                <div class="details">
+                    <h4>Ma Démarche Cybersécurité :</h4>
+                    <ul>
+                        <li>Développement de scripts Shell pour <strong>auditer automatiquement les utilisateurs et les
+                                permissions critiques</strong> sur Linux et Windows.</li>
+                        <li>Mise en place d'un script de <strong>surveillance</strong> capable de lire les journaux
+                            système et de
+                            générer des alertes en temps réel.</li>
+                        <li>Analyse approfondie pour proposer des recommandations de <strong>Hardening</strong> basées
+                            sur le
+                            principe du moindre privilège.</li>
+                    </ul>
+                    <p class="technologies"><strong>Technologies :</strong> Linux, Windows VM, Scripting Bash, Analyse
+                        de logs, Hardening.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3><span class="tag net">NET11</span> Conception et Sécurisation d'un Réseau d'Entreprise</h3>
+                </div>
+                <p>Projet axé sur la conception, l'implémentation et l'audit de sécurité d'une architecture réseau
+                    virtualisée, en mettant l'accent sur la <strong>défense en profondeur</strong> et la
+                    <strong>segmentation</strong>.</p>
+                <div class="details">
+                    <h4>Ma Démarche Cybersécurité :</h4>
+                    <ul>
+                        <li>Conception d'un <strong>plan d'adressage IP</strong> et d'une <strong>segmentation
+                                logique</strong> (DMZ, LAN,
+                            Administration).</li>
+                        <li>Configuration d'un pare-feu virtuel pour appliquer des <strong>règles de filtrage
+                                strictes</strong> et
+                            mise en place d'une solution <strong>VPN</strong> pour un accès distant sécurisé.</li>
+                        <li>Validation de la sécurité via des tests (ex: <strong>scans Nmap</strong>) pour confirmer la
+                            validité des
+                            politiques de sécurité.</li>
+                    </ul>
+                    <p class="technologies"><strong>Technologies :</strong> Virtualisation, Pare-feu virtuel (pfSense),
+                        VPN, Nmap, Adressage IP.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3><span class="tag bdd">BDD11</span> Sécurité Avancée des Bases de Données (PostgreSQL)</h3>
+                </div>
+                <p>Projet de <strong>Hardening</strong> d'une base de données PostgreSQL, intégrant des mécanismes de
+                    sécurité
+                    avancés pour protéger les données au repos et en transit.</p>
+                <div class="details">
+                    <h4>Ma Démarche Cybersécurité :</h4>
+                    <ul>
+                        <li>Implémentation du <strong>Row Level Security (RLS)</strong> et du <strong>Contrôle d'Accès
+                                basé sur les Rôles
+                                (RBAC)</strong>.</li>
+                        <li>Mise en œuvre du <strong>chiffrement en transit (TLS/SSL)</strong> et du <strong>chiffrement
+                                au champ
+                                (pgcrypto)</strong> pour les données sensibles.</li>
+                        <li>Développement d'un script de <strong>rotation des clés</strong> et configuration de
+                            l'<strong>audit et de la
+                                journalisation</strong> des requêtes sensibles.</li>
+                    </ul>
+                    <p class="technologies"><strong>Technologies :</strong> PostgreSQL, RLS, RBAC, Chiffrement, Audit
+                        SQL, Docker.</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Erwan CADOREL - Portfolio Cybersécurité</p>
+            <p>École 89 - B1 Cyber</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
