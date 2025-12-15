@@ -5,17 +5,18 @@
     --color-background-light: #111633;
     --color-text-primary: #f0f4ff;
     --color-text-secondary: #b8c5d6;
-    --color-accent: #ff4444;
+    --color-accent: #ff4444; /* Rouge principal */
     --color-accent-dark: #cc3333;
     --color-card-bg: #0f1429;
     --color-border: #1a2342;
     --color-button-hover: #ff5555;
 
-    --color-sys: #ff4444;
+    /* Couleurs des catégories */
+    --color-sys: #ff4444; /* Rouge pour Système */
     --color-sys-light: #ff6666;
-    --color-net: #2ecc71;
+    --color-net: #2ecc71; /* Vert pour Réseau */
     --color-net-light: #45d97a;
-    --color-bdd: #f39c12;
+    --color-bdd: #f39c12; /* Orange pour Base de Données */
     --color-bdd-light: #f5af42;
 }
 
@@ -93,6 +94,7 @@ h4 {
     color: var(--color-accent);
 }
 
+/* --- HERO SECTION --- */
 .hero-section {
     background: linear-gradient(135deg, rgba(255, 68, 68, 0.08) 0%, rgba(46, 204, 113, 0.05) 100%);
     padding: 120px 0;
@@ -196,6 +198,7 @@ h4 {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.1); /* Ajout d'une légère ombre */
 }
 
 .contact-links .button::before {
@@ -217,7 +220,8 @@ h4 {
     background-color: var(--color-button-hover);
     border-color: var(--color-button-hover);
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 217, 255, 0.2);
+    /* Utilisation de la couleur accent pour l'ombre du hover */
+    box-shadow: 0 15px 35px rgba(255, 68, 68, 0.4);
 }
 
 .contact-links .secondary {
@@ -229,9 +233,11 @@ h4 {
 .contact-links .secondary:hover {
     background-color: var(--color-accent);
     color: var(--color-background);
-    box-shadow: 0 15px 35px rgba(0, 217, 255, 0.3);
+    /* Utilisation de la couleur accent pour l'ombre du hover */
+    box-shadow: 0 15px 35px rgba(255, 68, 68, 0.4);
 }
 
+/* --- SKILLS SECTION --- */
 .skills-section {
     padding: 80px 0;
     text-align: center;
@@ -263,6 +269,7 @@ h4 {
     overflow: hidden;
 }
 
+/* Base de l'effet de barre latérale */
 .skill-category::before {
     content: '';
     position: absolute;
@@ -270,11 +277,26 @@ h4 {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, var(--color-accent), var(--color-net));
+    /* Couleur de base, sera écrasée ci-dessous */
+    background: var(--color-accent); 
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s ease-out;
     box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+}
+
+/* Styles spécifiques pour chaque catégorie */
+.sys-skills::before {
+    background: var(--color-sys);
+    box-shadow: 0 0 15px var(--color-sys);
+}
+.net-skills::before {
+    background: var(--color-net);
+    box-shadow: 0 0 15px var(--color-net);
+}
+.bdd-skills::before {
+    background: var(--color-bdd);
+    box-shadow: 0 0 15px var(--color-bdd);
 }
 
 .skill-category:hover {
@@ -302,18 +324,21 @@ h4 {
 }
 
 .skill-category li {
-    background: rgba(0, 217, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02); /* Fond très discret */
     padding: 10px 14px;
     margin-bottom: 8px;
     border-radius: 6px;
     font-size: 0.95em;
     color: var(--color-text-secondary);
-    border-left: 3px solid var(--color-accent);
+    /* Utilisation de la couleur secondaire pour la bordure par défaut */
+    border-left: 3px solid var(--color-text-secondary); 
     transition: all 0.2s ease;
 }
 
 .skill-category li:hover {
-    background: rgba(0, 217, 255, 0.1);
+    /* Révélation de la couleur d'accentuation au survol */
+    border-left-color: var(--color-accent);
+    background: rgba(255, 68, 68, 0.08); 
     color: var(--color-text-primary);
     transform: translateX(5px);
 }
@@ -328,6 +353,7 @@ h4 {
 }
 
 
+/* --- PROJECTS SECTION --- */
 .projects-section {
     padding: 80px 0;
     background-color: var(--color-background);
@@ -356,7 +382,7 @@ h4 {
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 68, 68, 0.1) 0%, transparent 70%); /* Utilisation de l'accentuation */
     transition: all 0.4s ease;
     pointer-events: none;
 }
@@ -364,7 +390,8 @@ h4 {
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--color-accent);
-    box-shadow: 0 25px 50px rgba(0, 217, 255, 0.2);
+    /* Ombre d'accentuation pour l'effet de profondeur */
+    box-shadow: 0 25px 50px rgba(255, 68, 68, 0.2); 
 }
 
 .project-card:hover::before {
@@ -390,6 +417,7 @@ h4 {
     min-width: 250px;
 }
 
+/* Styles des tags - OK */
 .tag {
     display: inline-block;
     padding: 6px 14px;
@@ -417,25 +445,27 @@ h4 {
 
 .tag.net {
     background-color: var(--color-net);
-    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); /* Ombre Verte */
 }
 
 .tag.net:hover {
     background-color: var(--color-net-light);
-    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
     transform: translateY(-2px);
 }
 
 .tag.bdd {
     background-color: var(--color-bdd);
-    box-shadow: 0 4px 15px rgba(69, 183, 209, 0.3);
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); /* Ombre Orange */
 }
 
 .tag.bdd:hover {
     background-color: var(--color-bdd-light);
-    box-shadow: 0 6px 20px rgba(69, 183, 209, 0.4);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
     transform: translateY(-2px);
 }
+/* Fin des styles de tags */
+
 
 .project-card > p {
     color: var(--color-text-secondary);
@@ -473,24 +503,27 @@ h4 {
 }
 
 .details li::before {
-    content: '→';
+    content: '▹'; /* Nouvelle puce 'Terminal Style' */
     position: absolute;
     left: 0;
-    color: var(--color-accent);
+    color: var(--color-net); /* Couleur Verte pour la lisibilité */
     font-weight: bold;
 }
 
 .technologies {
     margin-top: 25px;
     padding: 15px 20px;
-    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(78, 205, 196, 0.05) 100%);
-    border-left: 3px solid var(--color-accent);
+    /* Mise à jour du style pour être plus net */
+    background: var(--color-background-light); 
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
     border-radius: 8px;
     color: var(--color-text-secondary);
     font-size: 0.95em;
     line-height: 1.7;
 }
 
+/* --- FOOTER --- */
 footer {
     background: linear-gradient(135deg, var(--color-card-bg) 0%, rgba(31, 31, 31, 0.8) 100%);
     text-align: center;
@@ -509,6 +542,7 @@ footer p:hover {
     color: var(--color-accent);
 }
 
+/* --- MEDIA QUERIES (Responsive Design) --- */
 @media (max-width: 1024px) {
     .project-header {
         flex-direction: column;
