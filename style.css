@@ -157,6 +157,33 @@ h4 {
     animation: slideInUp 0.8s ease-out 0.4s both;
 }
 
+/* NOUVEAU STYLE POUR LA LISTE DANS L'ACROCHE */
+.hero-section p ul {
+    list-style: none; /* Enlève les puces par défaut */
+    padding: 0;
+    max-width: 500px;
+    margin: 15px auto 0 auto;
+    text-align: left;
+    color: var(--color-text-primary);
+}
+
+.hero-section p ul li {
+    padding-left: 20px;
+    position: relative;
+    color: var(--color-text-secondary);
+}
+
+.hero-section p ul li::before {
+    content: '▶'; /* Utilise un chevron moderne */
+    position: absolute;
+    left: 0;
+    color: var(--color-net); /* Couleur verte pour un look hacker/terminal */
+    font-size: 0.8em;
+    top: 3px;
+}
+/* FIN DU NOUVEAU STYLE */
+
+
 @keyframes slideInDown {
     from {
         opacity: 0;
@@ -569,6 +596,10 @@ footer p:hover {
 
     .hero-section p {
         font-size: 1em;
+    }
+    
+    .hero-section p ul {
+        max-width: none;
     }
 
     .contact-links .button {
