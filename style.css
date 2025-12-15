@@ -157,7 +157,7 @@ h4 {
     animation: slideInUp 0.8s ease-out 0.4s both;
 }
 
-/* NOUVEAU STYLE POUR LA LISTE DANS L'ACROCHE */
+/* STYLE SPÉCIFIQUE POUR LA LISTE DANS L'ACROCHE */
 .hero-section p ul {
     list-style: none; /* Enlève les puces par défaut */
     padding: 0;
@@ -181,7 +181,7 @@ h4 {
     font-size: 0.8em;
     top: 3px;
 }
-/* FIN DU NOUVEAU STYLE */
+/* FIN DU STYLE SPÉCIFIQUE */
 
 
 @keyframes slideInDown {
@@ -225,7 +225,7 @@ h4 {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(255, 68, 68, 0.1); /* Ajout d'une légère ombre */
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.1); 
 }
 
 .contact-links .button::before {
@@ -601,11 +601,14 @@ footer p:hover {
     .hero-section p ul {
         max-width: none;
     }
-
+    
+    /* STYLE SPÉCIFIQUE POUR LES BOUTONS CONTACT SUR MOBILE */
     .contact-links .button {
+        display: block; /* Chaque bouton prend toute la largeur */
+        margin: 10px auto; /* Marge verticale pour les séparer, centrage auto */
+        max-width: 300px;
         padding: 12px 28px;
         font-size: 0.95em;
-        margin: 8px 6px;
     }
 
     .skills-section {
@@ -669,13 +672,10 @@ footer p:hover {
     .contact-links .button {
         padding: 10px 20px;
         font-size: 0.9em;
-        margin: 6px 4px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 6px auto 10px auto; /* Mise à jour pour le centrage auto */
         width: 100%;
         max-width: 300px;
-        margin-bottom: 10px;
+        display: block;
     }
 
     .skill-category h4 {
