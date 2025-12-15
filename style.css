@@ -148,38 +148,55 @@ h4 {
     display: none;
 }
 
+/* Style général des paragraphes de l'intro */
 .hero-section p {
     max-width: 800px;
-    margin: 0 auto 35px auto;
+    margin: 0 auto 20px auto; /* Légèrement moins de marge en bas */
     font-size: 1.05em;
     color: var(--color-text-secondary);
     line-height: 1.8;
     animation: slideInUp 0.8s ease-out 0.4s both;
 }
 
-/* STYLE SPÉCIFIQUE POUR LA LISTE DANS L'ACROCHE */
-.hero-section p ul {
-    list-style: none; /* Enlève les puces par défaut */
+/* Nouveau style pour la liste d'expertise */
+.expertise-list {
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1.05em;
+    line-height: 1.8;
+    animation: slideInUp 0.8s ease-out 0.5s both;
+}
+
+.expertise-list ul {
+    list-style: none;
     padding: 0;
     max-width: 500px;
     margin: 15px auto 0 auto;
     text-align: left;
-    color: var(--color-text-primary);
 }
 
-.hero-section p ul li {
+.expertise-list ul li {
     padding-left: 20px;
     position: relative;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary); /* Rendre les compétences plus visibles */
+    font-weight: 500;
 }
 
-.hero-section p ul li::before {
-    content: '▶'; /* Utilise un chevron moderne */
+.expertise-list ul li::before {
+    content: '▶'; 
     position: absolute;
     left: 0;
-    color: var(--color-net); /* Couleur verte pour un look hacker/terminal */
+    color: var(--color-net); 
     font-size: 0.8em;
     top: 3px;
+}
+
+/* Style spécifique pour l'objectif final */
+.hero-section .objective {
+    margin-top: 25px;
+    margin-bottom: 40px; /* Plus de marge avant les boutons */
 }
 /* FIN DU STYLE SPÉCIFIQUE */
 
@@ -208,12 +225,16 @@ h4 {
 
 .contact-links {
     animation: slideInUp 0.8s ease-out 0.6s both;
+    display: flex; /* Utilisation de flexbox pour l'alignement */
+    justify-content: center;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur mobile */
+    gap: 15px; /* Espace entre les boutons */
 }
 
 .contact-links .button {
     display: inline-block;
     padding: 14px 32px;
-    margin: 0 12px;
+    /* margin: 0 12px; retiré car géré par gap */
     color: var(--color-background);
     background-color: var(--color-accent);
     text-decoration: none;
@@ -247,7 +268,6 @@ h4 {
     background-color: var(--color-button-hover);
     border-color: var(--color-button-hover);
     transform: translateY(-3px);
-    /* Utilisation de la couleur accent pour l'ombre du hover */
     box-shadow: 0 15px 35px rgba(255, 68, 68, 0.4);
 }
 
@@ -260,7 +280,6 @@ h4 {
 .contact-links .secondary:hover {
     background-color: var(--color-accent);
     color: var(--color-background);
-    /* Utilisation de la couleur accent pour l'ombre du hover */
     box-shadow: 0 15px 35px rgba(255, 68, 68, 0.4);
 }
 
@@ -304,7 +323,6 @@ h4 {
     left: 0;
     width: 4px;
     height: 100%;
-    /* Couleur de base, sera écrasée ci-dessous */
     background: var(--color-accent); 
     transform: scaleY(0);
     transform-origin: top;
@@ -351,19 +369,17 @@ h4 {
 }
 
 .skill-category li {
-    background: rgba(255, 255, 255, 0.02); /* Fond très discret */
+    background: rgba(255, 255, 255, 0.02); 
     padding: 10px 14px;
     margin-bottom: 8px;
     border-radius: 6px;
     font-size: 0.95em;
     color: var(--color-text-secondary);
-    /* Utilisation de la couleur secondaire pour la bordure par défaut */
     border-left: 3px solid var(--color-text-secondary); 
     transition: all 0.2s ease;
 }
 
 .skill-category li:hover {
-    /* Révélation de la couleur d'accentuation au survol */
     border-left-color: var(--color-accent);
     background: rgba(255, 68, 68, 0.08); 
     color: var(--color-text-primary);
@@ -409,7 +425,7 @@ h4 {
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255, 68, 68, 0.1) 0%, transparent 70%); /* Utilisation de l'accentuation */
+    background: radial-gradient(circle, rgba(255, 68, 68, 0.1) 0%, transparent 70%); 
     transition: all 0.4s ease;
     pointer-events: none;
 }
@@ -417,7 +433,6 @@ h4 {
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--color-accent);
-    /* Ombre d'accentuation pour l'effet de profondeur */
     box-shadow: 0 25px 50px rgba(255, 68, 68, 0.2); 
 }
 
@@ -444,7 +459,7 @@ h4 {
     min-width: 250px;
 }
 
-/* Styles des tags - OK */
+/* Styles des tags */
 .tag {
     display: inline-block;
     padding: 6px 14px;
@@ -472,7 +487,7 @@ h4 {
 
 .tag.net {
     background-color: var(--color-net);
-    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); /* Ombre Verte */
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); 
 }
 
 .tag.net:hover {
@@ -483,7 +498,7 @@ h4 {
 
 .tag.bdd {
     background-color: var(--color-bdd);
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); /* Ombre Orange */
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); 
 }
 
 .tag.bdd:hover {
@@ -491,7 +506,6 @@ h4 {
     box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
     transform: translateY(-2px);
 }
-/* Fin des styles de tags */
 
 
 .project-card > p {
@@ -530,17 +544,16 @@ h4 {
 }
 
 .details li::before {
-    content: '▹'; /* Nouvelle puce 'Terminal Style' */
+    content: '▹'; 
     position: absolute;
     left: 0;
-    color: var(--color-net); /* Couleur Verte pour la lisibilité */
+    color: var(--color-net); 
     font-weight: bold;
 }
 
 .technologies {
     margin-top: 25px;
     padding: 15px 20px;
-    /* Mise à jour du style pour être plus net */
     background: var(--color-background-light); 
     border: 1px solid var(--color-border);
     border-left: 4px solid var(--color-accent);
@@ -598,17 +611,16 @@ footer p:hover {
         font-size: 1em;
     }
     
-    .hero-section p ul {
+    .expertise-list ul {
         max-width: none;
     }
     
-    /* STYLE SPÉCIFIQUE POUR LES BOUTONS CONTACT SUR MOBILE */
+    /* Le flexbox sur contact-links et flex-wrap dans le HTML gère l'alignement mobile */
     .contact-links .button {
-        display: block; /* Chaque bouton prend toute la largeur */
-        margin: 10px auto; /* Marge verticale pour les séparer, centrage auto */
-        max-width: 300px;
         padding: 12px 28px;
         font-size: 0.95em;
+        width: 90%;
+        max-width: 300px;
     }
 
     .skills-section {
@@ -665,17 +677,13 @@ footer p:hover {
         font-size: 1em;
     }
 
-    .hero-section p {
+    .hero-section p, .expertise-list {
         font-size: 0.95em;
     }
 
     .contact-links .button {
         padding: 10px 20px;
         font-size: 0.9em;
-        margin: 6px auto 10px auto; /* Mise à jour pour le centrage auto */
-        width: 100%;
-        max-width: 300px;
-        display: block;
     }
 
     .skill-category h4 {
