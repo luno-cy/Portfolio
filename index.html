@@ -1,161 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erwan CADOREL - Portfolio Cybersécurité</title>
+    <title>Erwan CADOREL | Portfolio Cybersécurité</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
     <header class="hero-section">
         <div class="container">
+            <div class="badge-status">Disponible pour un stage / alternance</div>
             <h1>ERWAN CADOREL</h1>
-            <h2>Étudiant en 1ère année de Cybersécurité – École 89</h2>
-            <p>
-                Passionné par la sécurité des systèmes d’information, je souhaite mettre en pratique mes compétences à travers un stage d’au moins 2 mois ou une alternance de 4 ans, selon un rythme de 3 jours en entreprise et 2 jours à l’école.            
-            </p>
-            
-            <div class="expertise-list"> 
-                <strong>Mes domaines d’expertise incluent :</strong>
-                <ul>
-                    <li>Administration système sécurisée</li>
-                    <li>Administration réseaux sécurisée</li>
-                    <li>Création et sécurisation des bases de données</li>
-                </ul>
-            </div>
-            
-            <p class="objective">
-                Mon objectif : contribuer activement à la défense des infrastructures informatiques et à la prévention des cybermenaces.
+            <h2>Étudiant en Cybersécurité <span class="highlight">@ École 89</span></h2>
+            <p class="hero-description">
+                Passionné par la défense des systèmes, je recherche un stage de 2 mois ou une alternance de 4 ans (3j entreprise / 2j école) pour contribuer à la résilience de vos infrastructures.
             </p>
             
             <div class="contact-links">
-                <a href="mailto:erwan.cadorel@edu.ecole-89.com" class="button"><i class="fas fa-envelope"></i> Email</a>
-                <a href="tel:+33771083457" class="button secondary"><i class="fas fa-phone"></i> +33 (0)7 71 08 34 57</a>
-                <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank"
-                    class="button secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:erwan.cadorel@edu.ecole-89.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Contactez-moi</a>
+                <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="tel:+33771083457" class="btn btn-outline"><i class="fas fa-phone"></i> +33 7 71 08 34 57</a>
             </div>
         </div>
     </header>
 
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h3><i class="fas fa-tools"></i> Compétences Techniques Clés</h3>
+    <main class="container">
+        <section class="expertise-bar">
+            <div class="expertise-item"><i class="fas fa-shield-halved"></i> Admin Système</div>
+            <div class="expertise-item"><i class="fas fa-network-wired"></i> Réseaux Sécurisés</div>
+            <div class="expertise-item"><i class="fas fa-database"></i> Sécurité BDD</div>
+        </section>
+
+        <section id="skills" class="section">
+            <h3 class="section-title"><i class="fas fa-terminal"></i> Hard Skills</h3>
             <div class="skills-grid">
-                <div class="skill-category sys-skills">
-                    <h4>Système & OS</h4>
+                <div class="skill-card">
+                    <div class="card-header"><i class="fas fa-desktop"></i> <h4>Système & OS</h4></div>
                     <ul>
-                        <li>Linux (Debian, Ubuntu)</li>
-                        <li>Windows Server</li>
-                        <li>Virtualisation (VMware, VirtualBox)</li>
-                        <li>Scripting Shell (Bash)</li>
-                        <li>Hardening</li>
+                        <li><i class="fab fa-linux"></i> Linux (Debian, Ubuntu)</li>
+                        <li><i class="fab fa-windows"></i> Windows Server</li>
+                        <li><i class="fas fa-box"></i> Virtualisation (VMware)</li>
+                        <li><i class="fas fa-code"></i> Scripting Bash</li>
+                        <li><i class="fas fa-lock"></i> OS Hardening</li>
                     </ul>
                 </div>
-                <div class="skill-category net-skills">
-                    <h4>Réseau & Sécurité</h4>
+                <div class="skill-card">
+                    <div class="card-header"><i class="fas fa-server"></i> <h4>Réseau & Sécurité</h4></div>
                     <ul>
-                        <li>Modèles OSI/TCP-IP</li>
-                        <li>Segmentation réseau</li>
-                        <li>Pare-feu (pfSense, UFW)</li>
-                        <li>VPN</li>
-                        <li>Audit Réseau (Nmap)</li>
-                        <li>Plan d'adressage IP</li>
+                        <li><i class="fas fa-route"></i> Modèles OSI/TCP-IP</li>
+                        <li><i class="fas fa-filter"></i> Pare-feu (pfSense, UFW)</li>
+                        <li><i class="fas fa-user-secret"></i> Audit Réseau (Nmap)</li>
+                        <li><i class="fas fa-key"></i> VPN & Chiffrement</li>
+                        <li><i class="fas fa-project-diagram"></i> Segmentation VLAN</li>
                     </ul>
                 </div>
-                <div class="skill-category bdd-skills">
-                    <h4>Base de Données</h4>
+                <div class="skill-card">
+                    <div class="card-header"><i class="fas fa-database"></i> <h4>Données</h4></div>
                     <ul>
-                        <li>PostgreSQL, SQL</li>
-                        <li>Docker</li>
-                        <li>Row Level Security (RLS)</li>
-                        <li>RBAC (Contrôle d'Accès par Rôles)</li>
-                        <li>Chiffrement (`pgcrypto`)</li>
+                        <li><i class="fas fa-table"></i> PostgreSQL / SQL</li>
+                        <li><i class="fab fa-docker"></i> Docker Containerization</li>
+                        <li><i class="fas fa-user-shield"></i> RBAC & RLS</li>
+                        <li><i class="fas fa-file-shield"></i> Logs & Monitoring</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <h3><i class="fas fa-certificate"></i> Certifications</h3>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-microchip"></i>
+        <section id="projects" class="section">
+            <h3 class="section-title"><i class="fas fa-project-diagram"></i> Projets Techniques</h3>
+            <div class="project-container">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="tag tag-sys">SYS11</span>
+                        <span class="tech-stack">Linux, Bash, Hardening</span>
                     </div>
-                    <div class="cert-info">
-                        <h4>Introduction to Contemporary Operating Systems and Hardware</h4>
-                        <p class="cert-issuer">Cisco Networking Academy / École 89</p>
-                        <p class="cert-description">Maîtrise des fondamentaux des OS modernes, architecture matérielle et maintenance système.</p>
+                    <h3>Audit et Surveillance Active</h3>
+                    <p>Conception d'outils d'analyse de menaces sur VM vulnérable et automatisation d'audits de privilèges.</p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="tag tag-net">NET11</span>
+                        <span class="tech-stack">pfSense, VPN, Nmap</span>
                     </div>
+                    <h3>Architecture Réseau Défensive</h3>
+                    <p>Mise en place d'une défense en profondeur avec segmentation DMZ/LAN et filtrage de flux strict.</p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="tag tag-bdd">BDD11</span>
+                        <span class="tech-stack">PostgreSQL, Docker, TLS</span>
+                    </div>
+                    <h3>Sécurisation PostgreSQL</h3>
+                    <p>Durcissement de bases de données : chiffrement pgcrypto, contrôle d'accès RBAC et isolation Docker.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <div class="cert-banner">
+                <div class="cert-icon"><i class="fas fa-award"></i></div>
+                <div class="cert-content">
+                    <h4>Introduction to Contemporary Operating Systems</h4>
+                    <p>Cisco Networking Academy / École 89</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2><i class="fas fa-tasks"></i> Mes Projets Techniques</h2>
-
-            <article class="project-card">
-                <div class="project-header">
-                    <h3><span class="tag sys">SYS11</span> Audit et Surveillance Active des Systèmes</h3>
-                </div>
-                <p>Déploiement d'une VM vulnérable et conception d'outils d'analyse de menaces.</p>
-                <div class="details">
-                    <h4>Ma Démarche Cybersécurité :</h4>
-                    <ul>
-                        <li>Scripts Shell pour audit automatique des permissions critiques.</li>
-                        <li>Surveillance des journaux système et alertes en temps réel.</li>
-                        <li>Hardening basé sur le principe du moindre privilège.</li>
-                    </ul>
-                    <p class="technologies"><strong>Technologies :</strong> Linux, Bash, Logs, Hardening.</p>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-header">
-                    <h3><span class="tag net">NET11</span> Conception et Sécurisation Réseau</h3>
-                </div>
-                <p>Architecture réseau virtualisée axée sur la défense en profondeur.</p>
-                <div class="details">
-                    <h4>Ma Démarche Cybersécurité :</h4>
-                    <ul>
-                        <li>Segmentation DMZ/LAN et filtrage strict via pfSense.</li>
-                        <li>Mise en place de VPN pour accès distant sécurisé.</li>
-                        <li>Audits de sécurité réguliers via scans Nmap.</li>
-                    </ul>
-                    <p class="technologies"><strong>Technologies :</strong> pfSense, VPN, Nmap, Segmentation.</p>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-header">
-                    <h3><span class="tag bdd">BDD11</span> Sécurité Avancée PostgreSQL</h3>
-                </div>
-                <p>Hardening de base de données et protection des données sensibles.</p>
-                <div class="details">
-                    <h4>Ma Démarche Cybersécurité :</h4>
-                    <ul>
-                        <li>Implémentation RLS et RBAC.</li>
-                        <li>Chiffrement TLS/SSL et pgcrypto.</li>
-                        <li>Journalisation et audit des requêtes sensibles.</li>
-                    </ul>
-                    <p class="technologies"><strong>Technologies :</strong> PostgreSQL, Docker, Chiffrement, SQL.</p>
-                </div>
-            </article>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Erwan CADOREL - Portfolio Cybersécurité</p>
-            <p>École 89 - B1 Cyber</p>
+            <p>© 2026 Erwan CADOREL — <span class="highlight">B1 Cybersécurité</span></p>
+            <p class="footer-sub">Protégeons demain, aujourd'hui.</p>
         </div>
     </footer>
 
