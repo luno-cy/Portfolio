@@ -27,13 +27,15 @@
     </header>
 
     <main class="container">
-        <section class="expertise-bar">
-            <div class="expertise-item"><i class="fas fa-shield-halved"></i> Admin Système</div>
-            <div class="expertise-item"><i class="fas fa-network-wired"></i> Réseaux Sécurisés</div>
-            <div class="expertise-item"><i class="fas fa-database"></i> Sécurité BDD</div>
+        <section class="expertise-bar-container">
+            <div class="expertise-bar">
+                <div class="expertise-item"><i class="fas fa-shield-halved"></i> Admin Système</div>
+                <div class="expertise-item"><i class="fas fa-network-wired"></i> Réseaux Sécurisés</div>
+                <div class="expertise-item"><i class="fas fa-database"></i> Sécurité BDD</div>
+            </div>
         </section>
 
-        <section id="skills" class="section">
+        <section id="skills" class="section-spacer">
             <h3 class="section-title"><i class="fas fa-terminal"></i> Hard Skills</h3>
             <div class="skills-grid">
                 <div class="skill-card">
@@ -50,7 +52,7 @@
                     <div class="card-header"><i class="fas fa-server"></i> <h4>Réseau & Sécurité</h4></div>
                     <ul>
                         <li><i class="fas fa-route"></i> Modèles OSI/TCP-IP</li>
-                        <li><i class="fas fa-filter"></i> Pare-feu (pfSense, UFW)</li>
+                        <li><i class="fas fa-filter"></i> Pare-feu (pfSense)</li>
                         <li><i class="fas fa-user-secret"></i> Audit Réseau (Nmap)</li>
                         <li><i class="fas fa-key"></i> VPN & Chiffrement</li>
                         <li><i class="fas fa-project-diagram"></i> Segmentation VLAN</li>
@@ -60,7 +62,7 @@
                     <div class="card-header"><i class="fas fa-database"></i> <h4>Données</h4></div>
                     <ul>
                         <li><i class="fas fa-table"></i> PostgreSQL / SQL</li>
-                        <li><i class="fab fa-docker"></i> Docker Containerization</li>
+                        <li><i class="fab fa-docker"></i> Docker Containers</li>
                         <li><i class="fas fa-user-shield"></i> RBAC & RLS</li>
                         <li><i class="fas fa-file-shield"></i> Logs & Monitoring</li>
                     </ul>
@@ -68,16 +70,16 @@
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="projects" class="section-spacer">
             <h3 class="section-title"><i class="fas fa-project-diagram"></i> Projets Techniques</h3>
-            <div class="project-container">
+            <div class="project-list">
                 <article class="project-card">
                     <div class="project-meta">
                         <span class="tag tag-sys">SYS11</span>
                         <span class="tech-stack">Linux, Bash, Hardening</span>
                     </div>
                     <h3>Audit et Surveillance Active</h3>
-                    <p>Conception d'outils d'analyse de menaces sur VM vulnérable et automatisation d'audits de privilèges.</p>
+                    <p>Déploiement d'une VM vulnérable, création de scripts d'audit automatique des permissions et surveillance des logs en temps réel.</p>
                 </article>
 
                 <article class="project-card">
@@ -86,7 +88,7 @@
                         <span class="tech-stack">pfSense, VPN, Nmap</span>
                     </div>
                     <h3>Architecture Réseau Défensive</h3>
-                    <p>Mise en place d'une défense en profondeur avec segmentation DMZ/LAN et filtrage de flux strict.</p>
+                    <p>Conception d'une architecture virtualisée avec segmentation DMZ/LAN, filtrage strict via firewall et accès distant sécurisé par VPN.</p>
                 </article>
 
                 <article class="project-card">
@@ -95,14 +97,15 @@
                         <span class="tech-stack">PostgreSQL, Docker, TLS</span>
                     </div>
                     <h3>Sécurisation PostgreSQL</h3>
-                    <p>Durcissement de bases de données : chiffrement pgcrypto, contrôle d'accès RBAC et isolation Docker.</p>
+                    <p>Mise en œuvre du principe du moindre privilège via RBAC/RLS et chiffrement des données sensibles avec pgcrypto.</p>
                 </article>
             </div>
         </section>
 
-        <section id="certifications" class="section">
+        <section id="certifications" class="section-spacer last-section">
+            <h3 class="section-title"><i class="fas fa-award"></i> Reconnaissances</h3>
             <div class="cert-banner">
-                <div class="cert-icon"><i class="fas fa-award"></i></div>
+                <div class="cert-icon"><i class="fas fa-microchip"></i></div>
                 <div class="cert-content">
                     <h4>Introduction to Contemporary Operating Systems</h4>
                     <p>Cisco Networking Academy / École 89</p>
@@ -114,7 +117,7 @@
     <footer>
         <div class="container">
             <p>© 2026 Erwan CADOREL — <span class="highlight">B1 Cybersécurité</span></p>
-            <p class="footer-sub">Protégeons demain, aujourd'hui.</p>
+            <p class="footer-sub">Étudiant à l'École 89</p>
         </div>
     </footer>
 
