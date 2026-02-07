@@ -80,6 +80,24 @@
         </div>
     </section>
 
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Introduction to Contemporary Operating Systems and Hardware</h4>
+                        <p class="cert-issuer">Cisco Networking Academy / École 89</p>
+                        <p class="cert-description">Maîtrise des fondamentaux des OS modernes, architecture matérielle et maintenance système.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="projects-section">
         <div class="container">
             <h2><i class="fas fa-tasks"></i> Mes Projets Techniques</h2>
@@ -88,56 +106,49 @@
                 <div class="project-header">
                     <h3><span class="tag sys">SYS11</span> Audit et Surveillance Active des Systèmes</h3>
                 </div>
-                <p>J’ai déployé et configuré une machine virtuelle Linux volontairement vulnérable, puis conçu des outils de sécurité permettant d’identifier, analyser et documenter les menaces détectées.</p>
+                <p>Déploiement d'une VM vulnérable et conception d'outils d'analyse de menaces.</p>
                 <div class="details">
                     <h4>Ma Démarche Cybersécurité :</h4>
                     <ul>
-                        <li>Développement de scripts Shell pour auditer automatiquement les utilisateurs et les permissions critiques sur Linux et Windows.</li>
-                        <li>Mise en place d'un script de surveillance capable de lire les journaux système et de générer des alertes en temps réel.</li>
-                        <li>Analyse approfondie pour proposer des recommandations de Hardening basées sur le principe du moindre privilège.</li>
+                        <li>Scripts Shell pour audit automatique des permissions critiques.</li>
+                        <li>Surveillance des journaux système et alertes en temps réel.</li>
+                        <li>Hardening basé sur le principe du moindre privilège.</li>
                     </ul>
-                    <p class="technologies"><strong>Technologies :</strong> Linux, Windows VM, Scripting Bash, Analyse
-                        de logs, Hardening.</p>
+                    <p class="technologies"><strong>Technologies :</strong> Linux, Bash, Logs, Hardening.</p>
                 </div>
             </article>
 
             <article class="project-card">
                 <div class="project-header">
-                    <h3><span class="tag net">NET11</span> Conception et Sécurisation d'un Réseau d'Entreprise</h3>
+                    <h3><span class="tag net">NET11</span> Conception et Sécurisation Réseau</h3>
                 </div>
-                <p>Projet axé sur la conception, l'implémentation et l'audit de sécurité d'une architecture réseau
-                    virtualisée, en mettant l'accent sur la défense en profondeur et la segmentation.
-                </p>
+                <p>Architecture réseau virtualisée axée sur la défense en profondeur.</p>
                 <div class="details">
                     <h4>Ma Démarche Cybersécurité :</h4>
                     <ul>
-                        <li>Conception d'un plan d'adressage IP et d'une segmentation logique (DMZ, LAN, Administration).</li>
-                        <li>Configuration d'un pare-feu virtuel pour appliquer des règles de filtrage strictes et mise en place d'une solution VPN pour un accès distant sécurisé.</li>
-                        <li>Validation de la sécurité via des tests (ex: scans Nmap) pour confirmer la validité des politiques de sécurité.</li>
+                        <li>Segmentation DMZ/LAN et filtrage strict via pfSense.</li>
+                        <li>Mise en place de VPN pour accès distant sécurisé.</li>
+                        <li>Audits de sécurité réguliers via scans Nmap.</li>
                     </ul>
-                    <p class="technologies"><strong>Technologies :</strong> Virtualisation, Pare-feu virtuel (pfSense),
-                        VPN, Nmap, Adressage IP.</p>
+                    <p class="technologies"><strong>Technologies :</strong> pfSense, VPN, Nmap, Segmentation.</p>
                 </div>
             </article>
 
             <article class="project-card">
                 <div class="project-header">
-                    <h3><span class="tag bdd">BDD11</span> Sécurité Avancée des Bases de Données (PostgreSQL)</h3>
+                    <h3><span class="tag bdd">BDD11</span> Sécurité Avancée PostgreSQL</h3>
                 </div>
-                <p>Projet de Hardening d'une base de données PostgreSQL, intégrant des mécanismes de sécurité
-                    avancés pour protéger les données au repos et en transit.</p>
+                <p>Hardening de base de données et protection des données sensibles.</p>
                 <div class="details">
                     <h4>Ma Démarche Cybersécurité :</h4>
                     <ul>
-                        <li>Implémentation du Row Level Security (RLS) et du Contrôle d'Accès basé sur les Rôles (RBAC).</li>
-                        <li>Mise en œuvre du chiffrement en transit (TLS/SSL) et du chiffrement au champ (pgcrypto) pour les données sensibles.</li>
-                        <li>Développement d'un script de rotation des clés et configuration de l'audit et de la journalisation des requêtes sensibles.</li>
+                        <li>Implémentation RLS et RBAC.</li>
+                        <li>Chiffrement TLS/SSL et pgcrypto.</li>
+                        <li>Journalisation et audit des requêtes sensibles.</li>
                     </ul>
-                    <p class="technologies"><strong>Technologies :</strong> PostgreSQL, RLS, RBAC, Chiffrement, Audit
-                        SQL, Docker.</p>
+                    <p class="technologies"><strong>Technologies :</strong> PostgreSQL, Docker, Chiffrement, SQL.</p>
                 </div>
             </article>
-
         </div>
     </section>
 
@@ -149,5 +160,4 @@
     </footer>
 
 </body>
-
 </html>
