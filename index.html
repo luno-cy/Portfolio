@@ -1,353 +1,228 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erwan Cadorel - Portfolio Cybersécurité</title>
+    <title>Erwan Cadorel | Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Clean & Minimal -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">EC</span>
-                <span class="logo-subtext">// Cybersecurity</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#profil">Profil</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">E.C.</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Section Hero / Accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="terminal-btn close"></span>
-                        <span class="terminal-btn minimize"></span>
-                        <span class="terminal-btn maximize"></span>
-                    </div>
-                    <div class="terminal-title">terminal@portfolio:~</div>
-                </div>
-                <div class="terminal-body">
-                    <p class="terminal-line"><span class="prompt">$</span> whoami</p>
-                    <p class="terminal-line output">Erwan Cadorel | Étudiant en Cybersécurité</p>
-                    <p class="terminal-line"><span class="prompt">$</span> cat bio.txt</p>
-                    <p class="terminal-line output">Bilingue et déterminé, je veux intégrer le monde professionnel dans
-                        la cybersécurité pour développer mes compétences et m'investir activement, prêt à tous les défis
-                        qui m'attendent.</p>
-                    <p class="terminal-line"><span class="prompt">$</span> <span class="cursor">_</span></p>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hexagon-container">
-                    <div class="hexagon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="arrow"></div>
-        </div>
-    </section>
-
-    <!-- Section Profil -->
-    <section id="profil" class="section">
+    <!-- Home Section - 3 seconds max -->
+    <section id="home" class="section home">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">01.</span> Profil</h2>
-            <div class="profile-content">
-                <div class="profile-text">
-                    <h3>Étudiant en Cybersécurité à l'École 89 Deep Tech</h3>
-                    <p>Actuellement en première année d'un Bachelor en Cybersécurité & Hacking Éthique, je développe des
-                        compétences techniques solides en sécurité des réseaux, systèmes et bases de données.</p>
-
-                    <div class="experience">
-                        <h4>Parcours International</h4>
-                        <p>Ayant vécu dans plusieurs pays (Nigeria, Corée du Sud, Angola), j'ai développé une
-                            adaptabilité et une ouverture d'esprit qui sont des atouts dans le domaine de la
-                            cybersécurité internationale.</p>
-                    </div>
-
-                    <div class="objectives">
-                        <h4>Objectifs Professionnels</h4>
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> Stage de 2 mois à partir du 15 juin 2026</li>
-                            <li><i class="fas fa-chevron-right"></i> Alternance de 2 ans pour le Bachelor (3 jours entreprise / 2 jours
-                                école)</li>
-                            <li><i class="fas fa-chevron-right"></i> Alternance de 2 ans pour le Master (3 semaines entreprise / 1 semaine
-                                école)</li>
-                            <li><i class="fas fa-chevron-right"></i> Intégrer une équipe sécurité pour contribuer à la
-                                protection des systèmes</li>
-                        </ul>
+            <div class="home-grid">
+                <div class="home-info">
+                    <h1>Erwan Cadorel</h1>
+                    <p class="subtitle">Cybersecurity Student | École 89 Deep Tech</p>
+                    <p class="bio">Bilingual, international background (Nigeria, South Korea, Angola). Looking for internship June 2026 + apprenticeship.</p>
+                    <div class="availability">
+                        <span class="badge">📅 Available: June 2026</span>
+                        <span class="badge">💼 Apprenticeship ready</span>
                     </div>
                 </div>
-
-                <div class="profile-skills">
-                    <h3>Compétences Techniques</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4><i class="fas fa-network-wired"></i> Réseaux</h4>
-                            <p>Segmentation, Pare-feu, VPN, Topologie</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-server"></i> Systèmes</h4>
-                            <p>Linux, Windows, Audit, Hardening</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-database"></i> Bases de Données</h4>
-                            <p>PostgreSQL, Sécurité, Chiffrement</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-code"></i> Développement</h4>
-                            <p>Scripting, Automatisation, Tests</p>
-                        </div>
+                <div class="home-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Security Projects</div>
                     </div>
-
-                    <div class="timeline">
-                        <h4>Formation</h4>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2025-2029</div>
-                            <div class="timeline-content">
-                                <h5>Bachelor Cybersécurité & Hacking Éthique</h5>
-                                <p>École 89 Deep Tech</p>
-                            </div>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Certification</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Countries lived</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Projets -->
-    <section id="projets" class="section dark">
+    <!-- Projects Section - What matters most -->
+    <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">02.</span> Projets Académiques</h2>
-            <p class="section-subtitle">Réalisations dans le cadre de ma formation en cybersécurité</p>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3><i class="fas fa-database"></i> BDD11 - Sécurité des Bases de Données</h3>
-                        <span class="project-tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-content">
-                        <p>Conception et sécurisation avancée d'une base de données éducative avec RBAC, RLS,
-                            chiffrement et audit.</p>
-                        <ul>
-                            <li>Modèle Merise complet (MCD, MLD, MPD)</li>
-                            <li>Contrôle d'accès granulaire (RBAC + RLS)</li>
-                            <li>Chiffrement au repos et en transit</li>
-                            <li>Audit et journalisation complète</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-status">Terminé</span>
+            <h2 class="section-title">Key Projects</h2>
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>BDD11 - Database Security</h3>
+                    <div class="project-tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">RBAC</span>
+                        <span class="tag">Encryption</span>
                     </div>
                 </div>
+                <div class="project-body">
+                    <p><strong>Objective:</strong> Design secure educational database with access control.</p>
+                    <p><strong>Actions:</strong> Implemented RBAC, RLS, encryption at rest and in transit. Created complete audit system.</p>
+                    <p><strong>Result:</strong> Fully secured database with granular permissions.</p>
+                </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3><i class="fas fa-network-wired"></i> NET11 - Sécurité Réseau</h3>
-                        <span class="project-tag">pfSense</span>
-                        <span class="project-tag">Virtualisation</span>
-                    </div>
-                    <div class="project-content">
-                        <p>Conception, implémentation et audit d'un réseau d'entreprise segmenté pour une PME fictive.
-                        </p>
-                        <ul>
-                            <li>Architecture réseau sécurisée avec zones (DMZ, LAN, Serveurs)</li>
-                            <li>Configuration de pare-feu (pfSense/OPNsense)</li>
-                            <li>Mise en place de VPN Client-à-Site</li>
-                            <li>Tests de pénétration et audit de sécurité</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-status">Terminé</span>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>NET11 - Network Security</h3>
+                    <div class="project-tags">
+                        <span class="tag">pfSense</span>
+                        <span class="tag">VPN</span>
+                        <span class="tag">Firewall</span>
                     </div>
                 </div>
+                <div class="project-body">
+                    <p><strong>Objective:</strong> Secure network architecture for SME.</p>
+                    <p><strong>Actions:</strong> Segmented network (DMZ, LAN, Servers). Configured pfSense firewall. Set up client-to-site VPN. Performed penetration tests.</p>
+                    <p><strong>Result:</strong> Fully functional secure network.</p>
+                </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3><i class="fas fa-shield-alt"></i> SYS11 - Sécurité Système</h3>
-                        <span class="project-tag">Linux</span>
-                        <span class="project-tag">Windows</span>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>SYS11 - System Security</h3>
+                    <div class="project-tags">
+                        <span class="tag">Linux</span>
+                        <span class="tag">Windows</span>
+                        <span class="tag">Audit</span>
                     </div>
-                    <div class="project-content">
-                        <p>Création d'une VM vulnérable, développement d'outils d'audit et de surveillance active.</p>
-                        <ul>
-                            <li>Configuration de vulnérabilités intentionnelles</li>
-                            <li>Scripts d'audit (Bash & PowerShell)</li>
-                            <li>Surveillance de journaux et système d'alertes</li>
-                            <li>Recommandations de hardening</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-status">Terminé</span>
-                    </div>
+                </div>
+                <div class="project-body">
+                    <p><strong>Objective:</strong> Create vulnerable VM for learning purposes.</p>
+                    <p><strong>Actions:</strong> Configured intentional vulnerabilities. Developed audit scripts (Bash & PowerShell). Set up monitoring system.</p>
+                    <p><strong>Result:</strong> Educational tool used by other students.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Certifications -->
-    <section id="certifications" class="section">
+    <!-- Skills Section - Technical only -->
+    <section id="skills" class="section skills">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">03.</span> Certifications</h2>
-
-            <div class="certification-card">
-                <div class="certification-header">
-                    <div class="certification-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="certification-info">
-                        <h3>Introduction to Contemporary Operating Systems and Hardware 1c</h3>
-                        <p class="certification-issuer">Illinois Tech</p>
-                        <p class="certification-date">Émise en février 2026 | ID: 8HPC1RTX80II</p>
-                    </div>
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Networks</h3>
+                    <ul>
+                        <li>Segmentation & Architecture</li>
+                        <li>Firewalls (pfSense/OPNsense)</li>
+                        <li>VPN configuration</li>
+                        <li>Network auditing</li>
+                    </ul>
                 </div>
-                <div class="certification-description">
-                    <p>Certification couvrant les concepts fondamentaux des systèmes d'exploitation contemporains et de
-                        l'architecture matérielle, avec un focus sur les aspects sécurité.</p>
+
+                <div class="skill-group">
+                    <h3>Systems</h3>
+                    <ul>
+                        <li>Linux (administration)</li>
+                        <li>Windows Server</li>
+                        <li>System hardening</li>
+                        <li>Audit scripts</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>RBAC implementation</li>
+                        <li>Data encryption</li>
+                        <li>Security auditing</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>Bash scripting</li>
+                        <li>PowerShell</li>
+                        <li>Basic Python</li>
+                        <li>Automation</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="certifications-coming">
-                <h3>Certifications en vue</h3>
-                <div class="coming-soon-grid">
-                    <div class="coming-soon-item">
-                        <i class="fab fa-linux"></i>
-                        <p>Linux Essentials</p>
-                    </div>
-                    <div class="coming-soon-item">
-                        <i class="fas fa-network-wired"></i>
-                        <p>Network+</p>
-                    </div>
-                    <div class="coming-soon-item">
-                        <i class="fas fa-user-shield"></i>
-                        <p>Security+</p>
-                    </div>
+            <!-- Certification -->
+            <div class="certification">
+                <h3>Certification</h3>
+                <div class="cert-item">
+                    <div class="cert-name">Introduction to Contemporary Operating Systems and Hardware 1c</div>
+                    <div class="cert-issuer">Illinois Tech • Feb 2026</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Contact (sans formulaire) -->
-    <section id="contact" class="section dark">
+    <!-- Contact Section - Just the facts -->
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">04.</span> Contact</h2>
-            <p class="section-subtitle">Disponible pour un stage à partir de juin 2026 et une alternance</p>
-
-            <div class="contact-container-simple">
-                <div class="contact-info-full">
-                    <h3>Me contacter</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:Erwan.cadorel@edu.ecole-89.com">Erwan.cadorel@edu.ecole-89.com</a>
-                        </div>
+            <h2 class="section-title">Contact</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <div class="contact-label">Email</div>
+                        <a href="mailto:Erwan.cadorel@edu.ecole-89.com">Erwan.cadorel@edu.ecole-89.com</a>
                     </div>
+                </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Téléphone</h4>
-                            <a href="tel:+33771083457">+33 (0)7 71 08 34 57</a>
-                        </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div class="contact-label">Phone</div>
+                        <a href="tel:+33771083457">+33 7 71 08 34 57</a>
                     </div>
+                </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/"
-                                target="_blank">linkedin.com/in/cadorel-erwan</a>
-                        </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <div class="contact-label">LinkedIn</div>
+                        <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank">/in/cadorel-erwan</a>
                     </div>
+                </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Localisation</h4>
-                            <p>Disponible en Île-de-France</p>
-                        </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <div class="contact-label">Location</div>
+                        <span>Île-de-France / Remote</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="contact-availability">
-                        <h4>Disponibilités</h4>
-                        <div class="availability-grid">
-                            <div class="availability-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>
-                                    <h5>Stage</h5>
-                                    <p>2 mois à partir de juin 2026</p>
-                                </div>
-                            </div>
-                            <div class="availability-item">
-                                <i class="fas fa-briefcase"></i>
-                                <div>
-                                    <h5>Alternance</h5>
-                                    <p>4 ans (3j entreprise / 2j école)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Availability - Clear and direct -->
+            <div class="availability-box">
+                <h3>Availability</h3>
+                <div class="availability-dates">
+                    <div><strong>Internship:</strong> 2 months from June 15, 2026</div>
+                    <div><strong>Apprenticeship:</strong> 4 years (3 days company / 2 days school)</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">EC</span>
-                    <span class="logo-subtext">// Cybersecurity Portfolio</span>
-                </div>
-                <div class="footer-text">
-                    <p>© 2026 Erwan Cadorel. Tous droits réservés.</p>
-                    <p>Étudiant en Cybersécurité à l'École 89 Deep Tech</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="mailto:Erwan.cadorel@edu.ecole-89.com"><i class="fas fa-envelope"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
