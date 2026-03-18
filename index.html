@@ -3,996 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erwan Cadorel | Cybersecurity Portfolio</title>
+    <title>Erwan Cadorel - Portfolio Cybersécurité</title>
     
-    <!-- Meta tags pour les recruteurs -->
-    <meta name="description" content="Portfolio Erwan Cadorel - Étudiant Cybersécurité spécialisé en sécurité réseau et systèmes. Disponible stage juin 2026.">
-    <meta name="keywords" content="cybersécurité, sécurité réseau, Linux, PostgreSQL, pfSense, hacking éthique">
+    <!-- Meta tags optimisés SEO -->
+    <meta name="description" content="Portfolio Erwan Cadorel - Étudiant en Cybersécurité à l'École 89 Deep Tech. Spécialisé sécurité réseau, systèmes et bases de données. Disponible stage juin 2026.">
+    <meta name="keywords" content="cybersécurité, sécurité réseau, Linux, PostgreSQL, pfSense, hacking éthique, alternance">
     <meta name="author" content="Erwan Cadorel">
     
     <!-- Open Graph pour LinkedIn -->
-    <meta property="og:title" content="Erwan Cadorel - Cybersecurity Portfolio">
-    <meta property="og:description" content="Étudiant Cybersécurité à l'École 89 Deep Tech. Expert en sécurité réseau et systèmes.">
+    <meta property="og:title" content="Erwan Cadorel - Portfolio Cybersécurité">
+    <meta property="og:description" content="Étudiant Cybersécurité - Disponible stage juin 2026">
     <meta property="og:type" content="website">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
-    
     <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ===== RESET & VARIABLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-bg: #0a0c0f;
-            --secondary-bg: #111316;
-            --card-bg: #1a1d21;
-            --accent-cyan: #2dd4bf;
-            --accent-blue: #3b82f6;
-            --text-primary: #f0f4f8;
-            --text-secondary: #a0a8b4;
-            --text-tertiary: #6c7a8c;
-            --border-color: #2a2f35;
-            --success-green: #10b981;
-            --gradient-1: linear-gradient(135deg, #2dd4bf 0%, #3b82f6 100%);
-            --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* ===== BASE STYLES ===== */
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Optimisation performance animations */
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* ===== UTILITIES ===== */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section {
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-        }
-
-        /* ===== NAVIGATION ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(10, 12, 15, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled {
-            padding: 0.5rem 0;
-            background-color: rgba(10, 12, 15, 0.95);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .logo-badge {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            color: var(--text-secondary);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: var(--transition);
-        }
-
-        .nav-link:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: var(--accent-cyan);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            width: 24px;
-            height: 2px;
-            background-color: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Background gradient animé */
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, transparent 50%);
-            animation: rotate 30s linear infinite;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            bottom: -50%;
-            left: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-            animation: rotate 40s linear infinite reverse;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.875rem;
-            color: var(--accent-cyan);
-            margin-bottom: 1.5rem;
-            padding: 0.5rem 1rem;
-            background-color: rgba(45, 212, 191, 0.1);
-            border-radius: 100px;
-            border: 1px solid rgba(45, 212, 191, 0.2);
-        }
-
-        .hero-badge i {
-            font-size: 1rem;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title-gradient {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--text-tertiary);
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--gradient-1);
-            color: var(--primary-bg);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(45, 212, 191, 0.3);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border-color);
-            background-color: transparent;
-            color: var(--text-primary);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-2px);
-        }
-
-        .hero-terminal {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .terminal-header {
-            padding: 1rem;
-            background-color: var(--secondary-bg);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ff5f56;
-        }
-
-        .terminal-dot:nth-child(2) {
-            background-color: #ffbd2e;
-        }
-
-        .terminal-dot:nth-child(3) {
-            background-color: #27ca3f;
-        }
-
-        .terminal-title {
-            margin-left: auto;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            color: var(--text-tertiary);
-        }
-
-        .terminal-body {
-            padding: 1.5rem;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.875rem;
-        }
-
-        .terminal-line {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .terminal-prompt {
-            color: var(--accent-cyan);
-            white-space: nowrap;
-        }
-
-        .terminal-output {
-            color: var(--text-secondary);
-        }
-
-        .terminal-cursor {
-            display: inline-block;
-            width: 8px;
-            height: 1.2rem;
-            background-color: var(--accent-cyan);
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* ===== SKILLS SECTION ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: transparent;
-            box-shadow: var(--shadow-md);
-        }
-
-        .skill-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .skill-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-2);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .skill-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-card p {
-            color: var(--text-tertiary);
-            font-size: 0.875rem;
-            line-height: 1.6;
-        }
-
-        /* ===== PROJECTS SECTION ===== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: var(--transition);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-header {
-            padding: 2rem 1.5rem 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .project-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--gradient-1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .project-tag {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            background-color: rgba(45, 212, 191, 0.1);
-            border: 1px solid rgba(45, 212, 191, 0.2);
-            border-radius: 100px;
-            color: var(--accent-cyan);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            flex: 1;
-        }
-
-        .project-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-content p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-item {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            background-color: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            color: var(--text-tertiary);
-        }
-
-        .project-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--success-green);
-        }
-
-        .project-status i {
-            font-size: 0.75rem;
-        }
-
-        .project-link {
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            color: var(--accent-cyan);
-        }
-
-        /* ===== CERTIFICATIONS SECTION ===== */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .cert-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-2);
-            transform: translateX(-100%);
-            transition: var(--transition);
-        }
-
-        .cert-card:hover {
-            border-color: transparent;
-            box-shadow: var(--shadow-md);
-        }
-
-        .cert-card:hover::before {
-            transform: translateX(0);
-        }
-
-        .cert-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(45, 212, 191, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-cyan);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cert-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-issuer {
-            color: var(--accent-cyan);
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-
-        .cert-date {
-            color: var(--text-tertiary);
-            font-size: 0.75rem;
-            font-family: 'Fira Code', monospace;
-            margin-bottom: 1rem;
-        }
-
-        .cert-id {
-            color: var(--text-tertiary);
-            font-size: 0.75rem;
-            font-family: 'Fira Code', monospace;
-            padding: 0.5rem;
-            background-color: var(--secondary-bg);
-            border-radius: 6px;
-            display: inline-block;
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-item-icon {
-            width: 48px;
-            height: 48px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-cyan);
-            font-size: 1.25rem;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover .contact-item-icon {
-            border-color: var(--accent-cyan);
-            transform: scale(1.05);
-        }
-
-        .contact-item-content h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-item-content a,
-        .contact-item-content p {
-            color: var(--text-tertiary);
-            text-decoration: none;
-            transition: var(--transition);
-            margin-bottom: 0;
-        }
-
-        .contact-item-content a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .availability-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .availability-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .availability-items {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .availability-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background-color: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .availability-item:hover {
-            border-color: var(--accent-cyan);
-            transform: translateX(5px);
-        }
-
-        .availability-item i {
-            color: var(--accent-cyan);
-            font-size: 1.25rem;
-        }
-
-        .availability-item h5 {
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .availability-item p {
-            font-size: 0.875rem;
-            color: var(--text-tertiary);
-            margin-bottom: 0;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: var(--secondary-bg);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-logo span {
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-copyright {
-            color: var(--text-tertiary);
-            font-size: 0.875rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-            transform: translateY(-3px);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-bg);
-                padding: 2rem;
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-                border-bottom: 1px solid var(--border-color);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .mobile-menu-btn.active span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 6px);
-            }
-
-            .mobile-menu-btn.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-menu-btn.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-        }
-
-        /* ===== ANIMATIONS ===== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Délais d'animation */
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-text">Erwan Cadorel</span>
-                <span class="logo-badge">Sec+</span>
-            </div>
-            
+            <div class="logo">Erwan Cadorel</div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#accueil" class="nav-link active">Accueil</a></li>
                 <li><a href="#profil" class="nav-link">Profil</a></li>
+                <li><a href="#experiences" class="nav-link">Expériences</a></li>
+                <li><a href="#formations" class="nav-link">Formations</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
                 <li><a href="#projets" class="nav-link">Projets</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-
             <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
                 <span></span>
@@ -1003,85 +46,42 @@
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
-        <div class="hero-bg"></div>
-        
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text fade-in">
+                <div>
                     <div class="hero-badge">
                         <i class="fas fa-shield-halved"></i>
-                        <span>Disponible stage juin 2026</span>
+                        Disponible stage juin 2026
                     </div>
-                    
                     <h1 class="hero-title">
-                        Étudiant en
-                        <span class="hero-title-gradient">Cybersécurité</span>
+                        Passionné par la <span>Cybersécurité</span>
                     </h1>
-                    
                     <p class="hero-description">
-                        Bilingue, parcours international (Nigeria, Corée du Sud, Angola). 
-                        Spécialisé en sécurité réseau, systèmes et bases de données.
+                        Étudiant en Bachelor Cybersécurité & Hacking Éthique à l'École 89 Deep Tech. 
+                        Bilingue, parcours international (Nigeria, Corée du Sud, Angola).
                     </p>
-
                     <div class="hero-stats">
-                        <div class="stat-item">
+                        <div class="stat">
                             <span class="stat-number">3+</span>
                             <span class="stat-label">Projets majeurs</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat">
                             <span class="stat-number">4</span>
                             <span class="stat-label">Pays vécus</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat">
                             <span class="stat-number">2026</span>
-                            <span class="stat-label">Diplôme Bachelor</span>
+                            <span class="stat-label">Bachelor</span>
                         </div>
-                    </div>
-
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary">
-                            Me contacter
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#projets" class="btn btn-outline">
-                            Voir mes projets
-                        </a>
                     </div>
                 </div>
-
-                <div class="hero-terminal fade-in delay-2">
-                    <div class="terminal-header">
-                        <span class="terminal-dot"></span>
-                        <span class="terminal-dot"></span>
-                        <span class="terminal-dot"></span>
-                        <span class="terminal-title">terminal@erwan:~</span>
+                <div class="hero-image">
+                    <div class="profile-frame">
+                        <i class="fas fa-user-shield"></i>
                     </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$</span>
-                            <span class="terminal-output">whoami</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">></span>
-                            <span class="terminal-output">Erwan Cadorel | Cybersecurity Student</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$</span>
-                            <span class="terminal-output">cat skills.txt</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">></span>
-                            <span class="terminal-output">Network Security • Linux • PostgreSQL • pfSense</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$</span>
-                            <span class="terminal-output">./availability --check</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">></span>
-                            <span class="terminal-output">Status: Open for internship (June 2026)</span>
-                            <span class="terminal-cursor"></span>
-                        </div>
+                    <div class="availability-tag">
+                        <i class="fas fa-calendar-check" style="color: var(--success);"></i>
+                        <span class="date">Disponible dès juin 2026</span>
                     </div>
                 </div>
             </div>
@@ -1091,55 +91,466 @@
     <!-- Profil Section -->
     <section id="profil" class="section">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <span class="section-tag">// 01. Profil</span>
-                <h2 class="section-title">Parcours & Expertise</h2>
-                <p class="section-subtitle">Une approche internationale de la cybersécurité</p>
+                <h2 class="section-title">Qui suis-je ?</h2>
+                <p class="section-subtitle">Un parcours international au service de la cybersécurité</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        <span class="about-highlight">Fasciné par la cybersécurité</span>, j'ai développé une solide expertise technique 
+                        en sécurité des réseaux, systèmes et bases de données. Mon parcours international m'a apporté une 
+                        <span class="about-highlight">adaptabilité</span> et une <span class="about-highlight">ouverture d'esprit</span> 
+                        essentielles dans un domaine où les menaces sont globales.
+                    </p>
+                    <p>
+                        La <span class="about-highlight">logique</span>, la <span class="about-highlight">rigueur</span> et la 
+                        <span class="about-highlight">curiosité</span> sont les qualités qui me définissent. Dans un domaine en constante 
+                        évolution, je m'engage à apprendre en continu et de manière autodidacte pour toujours rester à la pointe.
+                    </p>
+                    <p>
+                        Je recherche un <span class="about-highlight">stage de 2 mois à partir du 15 juin 2026</span>, suivi d'une 
+                        <span class="about-highlight">alternance sur 4 ans</span> (Bachelor puis Master) pour approfondir mes compétences 
+                        et contribuer à la sécurité des systèmes d'information.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expériences Section -->
+    <section id="experiences" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 02. Expériences</span>
+                <h2 class="section-title">Parcours professionnel</h2>
+                <p class="section-subtitle">Des expériences variées qui forgent mon expertise</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>Projets Personnels en Cybersécurité</h3>
+                        <h4>Laboratoire personnel</h4>
+                        <ul>
+                            <li>Configuration de VM vulnérables pour apprentissage du pentesting</li>
+                            <li>Développement de scripts d'audit automatique (Bash, PowerShell)</li>
+                            <li>Mise en place d'une architecture réseau sécurisée avec pfSense</li>
+                            <li>Tests d'intrusion sur environnements contrôlés</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Projet Académique - Sécurité Base de Données</h3>
+                        <h4>École 89 Deep Tech</h4>
+                        <ul>
+                            <li>Conception d'une base de données éducative sécurisée (PostgreSQL)</li>
+                            <li>Implémentation de contrôles d'accès RBAC et RLS</li>
+                            <li>Mise en place d'un système de chiffrement des données sensibles</li>
+                            <li>Création d'un système d'audit complet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 03. Formations</span>
+                <h2 class="section-title">Diplômes & Certifications</h2>
+                <p class="section-subtitle">Un parcours académique solide</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 - 2029</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor Cybersécurité & Hacking Éthique</h3>
+                        <h4>École 89 Deep Tech</h4>
+                        <ul>
+                            <li>Sécurité des réseaux et systèmes</li>
+                            <li>Cryptographie et protocoles sécurisés</li>
+                            <li>Tests d'intrusion et analyse de vulnérabilités</li>
+                            <li>Gouvernance et gestion des risques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Février 2026</div>
+                    <div class="timeline-content">
+                        <h3>Introduction to Contemporary Operating Systems and Hardware 1c</h3>
+                        <h4>Illinois Tech - Certification</h4>
+                        <ul>
+                            <li>Architecture des systèmes d'exploitation</li>
+                            <li>Mécanismes de sécurité matériels et logiciels</li>
+                            <li>Gestion de la mémoire et des processus</li>
+                        </ul>
+                        <div style="margin-top: 1rem;">
+                            <span style="background: var(--secondary); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; color: var(--text-dim);">ID: 8HPC1RTX80II</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Prochaines certifications</div>
+                    <div class="timeline-content">
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: 100px; border: 1px dashed var(--border);">
+                                <i class="fab fa-linux" style="color: var(--accent);"></i> Linux Essentials
+                            </span>
+                            <span style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: 100px; border: 1px dashed var(--border);">
+                                <i class="fas fa-network-wired" style="color: var(--accent);"></i> Network+
+                            </span>
+                            <span style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: 100px; border: 1px dashed var(--border);">
+                                <i class="fas fa-shield-alt" style="color: var(--accent);"></i> Security+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 04. Compétences</span>
+                <h2 class="section-title">Expertise technique</h2>
+                <p class="section-subtitle">Des compétences approfondies en sécurité</p>
             </div>
 
             <div class="skills-grid">
-                <div class="skill-card fade-in delay-1">
-                    <div class="skill-icon">
-                        <i class="fas fa-network-wired"></i>
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Sécurité Réseau</h3>
                     </div>
-                    <h3>Sécurité Réseau</h3>
-                    <p>Segmentation, pare-feu (pfSense), VPN, topologies sécurisées</p>
+                    <p class="skill-description">
+                        Maîtrise des outils comme Wireshark et Nmap pour l'analyse réseau. 
+                        Configuration de pare-feu (pfSense), segmentation réseau, VPN. 
+                        Capacité à identifier rapidement les vulnérabilités et garantir un fonctionnement fluide du réseau.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">pfSense</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Nmap</span>
+                        <span class="skill-tag">VPN</span>
+                        <span class="skill-tag">VLAN</span>
+                    </div>
                 </div>
 
-                <div class="skill-card fade-in delay-2">
-                    <div class="skill-icon">
-                        <i class="fas fa-server"></i>
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-server"></i></div>
+                        <h3>Sécurité Système</h3>
                     </div>
-                    <h3>Sécurité Système</h3>
-                    <p>Linux, Windows, hardening, audit de configuration</p>
+                    <p class="skill-description">
+                        Administration des systèmes d'exploitation : Windows, Linux (Ubuntu, Debian, Kali). 
+                        Gestion des paquets, droits sudo, hardening. Capacité à diagnostiquer et résoudre 
+                        les pannes système. Expérience en environnement complexe.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">Hardening</span>
+                        <span class="skill-tag">Audit</span>
+                        <span class="skill-tag">Kali</span>
+                    </div>
                 </div>
 
-                <div class="skill-card fade-in delay-3">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>Sécurité Bases de Données</h3>
                     </div>
-                    <h3>Sécurité BDD</h3>
-                    <p>PostgreSQL, RBAC, RLS, chiffrement, audit</p>
+                    <p class="skill-description">
+                        Spécialisation PostgreSQL avec mise en place de contrôles d'accès RBAC et RLS. 
+                        Chiffrement des données sensibles, système d'audit complet. Modélisation Merise 
+                        (MCD, MLD, MPD) pour une conception sécurisée.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">RBAC</span>
+                        <span class="skill-tag">RLS</span>
+                        <span class="skill-tag">Chiffrement</span>
+                        <span class="skill-tag">Merise</span>
+                    </div>
                 </div>
 
-                <div class="skill-card fade-in delay-4">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Scripting & Développement</h3>
                     </div>
-                    <h3>Scripting</h3>
-                    <p>Bash, PowerShell, automatisation des audits</p>
+                    <p class="skill-description">
+                        Développement de scripts d'automatisation pour l'audit de sécurité en Bash et PowerShell. 
+                        Bases en Python pour l'outillage. Capacité à développer des algorithmes et résoudre 
+                        des problèmes techniques.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Automatisation</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Cybersécurité Générale</h3>
+                    </div>
+                    <p class="skill-description">
+                        Connaissances approfondies des concepts de sécurité : analyse des vulnérabilités, 
+                        tests d'intrusion, gestion des risques. Sensibilisation aux menaces courantes 
+                        (phishing, malwares, violations de données) et aux bonnes pratiques.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pentest</span>
+                        <span class="skill-tag">Analyse vulnérabilités</span>
+                        <span class="skill-tag">Gestion des risques</span>
+                        <span class="skill-tag">OWASP</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Langues & International</h3>
+                    </div>
+                    <p class="skill-description">
+                        Parcours international (Nigeria, Corée du Sud, Angola) offrant une excellente 
+                        adaptabilité et ouverture d'esprit. Anglais courant, essentiel pour la veille 
+                        sécurité et la collaboration internationale.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Anglais courant</span>
+                        <span class="skill-tag">Adaptabilité</span>
+                        <span class="skill-tag">Multiculturel</span>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="margin-top: 4rem;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Formation</h3>
-                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 250px;">
-                        <div style="font-family: 'Fira Code', monospace; color: var(--accent-cyan); margin-bottom: 0.5rem;">2025 - 2029</div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Bachelor Cybersécurité & Hacking Éthique</h4>
-                        <p style="color: var(--text-tertiary);">École 89 Deep Tech</p>
+    <!-- Projets Section -->
+    <section id="projets" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 05. Projets</span>
+                <h2 class="section-title">Réalisations techniques</h2>
+                <p class="section-subtitle">Des projets concrets en cybersécurité</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-database"></i>
                     </div>
-                    <div style="flex: 1; min-width: 250px;">
-                        <div style="font-family: 'Fira Code', monospace; color: var(--accent-cyan); margin-bottom: 0.5rem;">Parcours International</div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Nigeria • Corée du Sud • Angola</h4>
-                        <p style="color: var(--
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>BDD11 - Sécurité BDD</h3>
+                            <span class="project-category">PostgreSQL</span>
+                        </div>
+                        <p class="project-description">
+                            Base de données éducative sécurisée avec modélisation Merise, contrôle d'accès RBAC/RLS, 
+                            chiffrement des données et système d'audit complet.
+                        </p>
+                        <div class="project-tech">
+                            <span>PostgreSQL</span>
+                            <span>RBAC</span>
+                            <span>RLS</span>
+                            <span>Merise</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>NET11 - Sécurité Réseau</h3>
+                            <span class="project-category">pfSense</span>
+                        </div>
+                        <p class="project-description">
+                            Architecture réseau sécurisée pour PME avec segmentation (DMZ, LAN, Serveurs), 
+                            configuration pare-feu pfSense, VPN client-à-site et tests d'intrusion.
+                        </p>
+                        <div class="project-tech">
+                            <span>pfSense</span>
+                            <span>VPN</span>
+                            <span>VLAN</span>
+                            <span>Wireshark</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>SYS11 - Sécurité Système</h3>
+                            <span class="project-category">Linux</span>
+                        </div>
+                        <p class="project-description">
+                            VM vulnérable pour apprentissage du pentesting avec scripts d'audit automatisés 
+                            (Bash & PowerShell), monitoring et recommandations de hardening.
+                        </p>
+                        <div class="project-tech">
+                            <span>Linux</span>
+                            <span>Bash</span>
+                            <span>PowerShell</span>
+                            <span>Hardening</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 06. Contact</span>
+                <h2 class="section-title">Travaillons ensemble</h2>
+                <p class="section-subtitle">Disponible pour stage (juin 2026) et alternance</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Discutons de vos besoins</h3>
+                    <p>
+                        Vous recherchez un étudiant motivé, rigoureux et passionné pour renforcer votre équipe 
+                        cybersécurité ? Je suis disponible pour échanger sur vos besoins et vous présenter 
+                        mes compétences plus en détail.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:Erwan.cadorel@edu.ecole-89.com">Erwan.cadorel@edu.ecole-89.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <a href="tel:+33771083457">+33 7 71 08 34 57</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank">linkedin.com/in/cadorel-erwan</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Île-de-France / Remote</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--secondary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="margin-bottom: 1rem; color: var(--accent);">Disponibilités</h4>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <div style="flex: 1;">
+                                <i class="fas fa-calendar-alt" style="color: var(--accent);"></i>
+                                <h5 style="margin: 0.5rem 0;">Stage</h5>
+                                <p style="color: var(--text-dim);">2 mois - juin 2026</p>
+                            </div>
+                            <div style="flex: 1;">
+                                <i class="fas fa-briefcase" style="color: var(--accent);"></i>
+                                <h5 style="margin: 0.5rem 0;">Alternance</h5>
+                                <p style="color: var(--text-dim);">4 ans (3j entreprise / 2j école)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 2rem;">Envoyez-moi un message</h3>
+                    <form action="#" method="POST" id="contactForm">
+                        <div class="form-group">
+                            <label for="email">EMAIL :</label>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">TÉLÉPHONE :</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Votre numéro">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">PRÉNOM :</label>
+                            <input type="text" id="firstname" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">NOM :</label>
+                            <input type="text" id="lastname" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">MESSAGE :</label>
+                            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité.</label>
+                        </div>
+                        <button type="submit" class="btn">
+                            Envoyer le message
+                            <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copyright">
+                    © 2026 Erwan Cadorel - Portfolio Cybersécurité. Tous droits réservés.
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/cadorel-erwan-58826a332/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:Erwan.cadorel@edu.ecole-89.com"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
