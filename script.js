@@ -1,6 +1,6 @@
-// script.js - Minimal, just essentials
+// script.js - Minimal, juste l'essentiel
 
-// Smooth scroll for navigation
+// Défilement fluide pour la navigation
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -16,7 +16,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Highlight active navigation based on scroll
+// Navigation active au défilement
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -42,9 +42,9 @@ function updateActiveNav() {
 }
 
 window.addEventListener('scroll', updateActiveNav);
-updateActiveNav(); // Initial call
+updateActiveNav();
 
-// Add slight animation on scroll (optional - can remove if you want even cleaner)
+// Animation légère au défilement (optionnel)
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -57,13 +57,13 @@ const observer = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -50px 0px'
 });
 
-document.querySelectorAll('.project-card, .skill-group, .contact-item').forEach(el => {
+document.querySelectorAll('.projet-carte, .competence-groupe, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(10px)';
     el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     observer.observe(el);
 });
 
-// Console log - professional touch
-console.log('Erwan Cadorel - Cybersecurity Portfolio');
-console.log('Ready for internship June 2026');
+// Console log - pro
+console.log('Erwan Cadorel - Portfolio Cybersécurité');
+console.log('Disponible stage juin 2026');
