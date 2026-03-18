@@ -2,8 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initSmoothScroll();
-    initContactForm();
     initScrollSpy();
+    initScrollAnimations();
 });
 
 // ===== NAVIGATION (Menu mobile & scroll) =====
@@ -99,7 +99,7 @@ function initScrollSpy() {
 
 // ===== ANIMATIONS AU SCROLL (Intersection Observer) =====
 function initScrollAnimations() {
-    const elements = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .about-text');
+    const elements = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .about-text, .contact-info-card, .availability-card-full');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -116,110 +116,6 @@ function initScrollAnimations() {
     elements.forEach(el => observer.observe(el));
 }
 
-// ===== GESTION FORMULAIRE CONTACT =====
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    
-    if (!form) return;
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Validation simple
-        const email = document.getElementById('email').value;
-        const firstname = document.getElementById('firstname').value;
-        const lastname = document.getElementById('lastname').value;
-        const message = document.getElementById('message').value;
-        const consent = document.getElementById('consent').checked;
-
-        if (!email || !firstname || !lastname || !message || !consent) {
-            showNotification('Veuillez remplir tous les champs obligatoires', 'error');
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            showNotification('Veuillez entrer une adresse email valide', 'error');
-            return;
-        }
-
-        // Simulation d'envoi (à remplacer par votre logique backend)
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-
-        setTimeout(() => {
-            showNotification('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.', 'success');
-            form.reset();
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-        }, 1500);
-    });
-}
-
-// ===== VALIDATION EMAIL =====
-function isValidEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-// ===== NOTIFICATION SYSTEM =====
-function showNotification(message, type = 'info') {
-    // Supprimer les anciennes notifications
-    const oldNotifications = document.querySelectorAll('.notification');
-    oldNotifications.forEach(notif => notif.remove());
-
-    // Créer la notification
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-        <span>${message}</span>
-    `;
-
-    // Styles de la notification
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        padding: 1rem 1.5rem;
-        background: ${type === 'success' ? 'var(--success)' : '#ef4444'};
-        color: white;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        z-index: 9999;
-        animation: slideIn 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    `;
-
-    document.body.appendChild(notification);
-
-    // Animation slideIn
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Disparition automatique
-    setTimeout(() => {
-        notification.style.animation = 'slideIn 0.3s ease reverse';
-        setTimeout(() => notification.remove(), 300);
-    }, 5000);
-}
-
 // ===== GESTION DES PERFORMANCES =====
 // Lazy loading des images (si vous ajoutez des images plus tard)
 if ('loading' in HTMLImageElement.prototype) {
@@ -227,13 +123,6 @@ if ('loading' in HTMLImageElement.prototype) {
     images.forEach(img => {
         img.loading = 'lazy';
     });
-}
-
-// ===== DÉTECTION DU MODE SOMBRE (optionnel) =====
-function detectColorScheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
 }
 
 // ===== CONSOLE MESSAGE (pro) =====
@@ -244,4 +133,8 @@ console.log(
 console.log(
     '%c📅 Disponible stage juin 2026 | Alternance 4 ans',
     'font-size: 14px; color: #a0a8b4;'
+);
+console.log(
+    '%c📧 Email: Erwan.cadorel@edu.ecole-89.com',
+    'font-size: 12px; color: #6c7a8c;'
 );
