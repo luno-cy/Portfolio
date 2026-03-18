@@ -1,73 +1,69 @@
-// script.js
-// Navigation mobile
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// script.js - Minimal, just essentials
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+// Smooth scroll for navigation
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
 
-// Fermer le menu mobile lorsqu'on clique sur un lien
-document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+// Highlight active navigation based on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-// Animation de la section hero (terminal)
-const terminalCursor = document.querySelector('.cursor');
-const terminalLines = document.querySelectorAll('.terminal-line');
+function updateActiveNav() {
+    let current = '';
+    const scrollPosition = window.scrollY + 100;
 
-// Animation d'apparition des lignes du terminal
-let lineIndex = 0;
-const showTerminalLines = () => {
-    if (lineIndex < terminalLines.length) {
-        terminalLines[lineIndex].style.opacity = '1';
-        terminalLines[lineIndex].style.transform = 'translateY(0)';
-        lineIndex++;
-        setTimeout(showTerminalLines, 300);
-    } else {
-        // Clignotement continu du curseur
-        terminalCursor.style.animation = 'blink 1s infinite';
-    }
-};
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
-// Initialiser l'opacité et la position des lignes
-terminalLines.forEach(line => {
-    line.style.opacity = '0';
-    line.style.transform = 'translateY(10px)';
-    line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-});
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            current = section.getAttribute('id');
+        }
+    });
 
-// Démarrer l'animation après le chargement
-window.addEventListener('load', () => {
-    setTimeout(showTerminalLines, 500);
-});
+    navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === `#${current}`) {
+            link.style.color = '#0066cc';
+        }
+    });
+}
 
-// Animation au défilement
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav(); // Initial call
 
+// Add slight animation on scroll (optional - can remove if you want even cleaner)
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
 
-// Observer les éléments à animer
-document.querySelectorAll('.project-card, .skill-category, .certification-card, .availability-item').forEach(el => {
+document.querySelectorAll('.project-card, .skill-group, .contact-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(10px)';
+    el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     observer.observe(el);
 });
 
-// Animation du curseur du terminal
-let cursorVisible = true;
-setInterval(() => {
-    if (terminalCursor) {
-        cursorVisible = !cursorVisible;
-        terminalCursor.style.opacity = cursorVisible ? '1' : '0';
-    }
-}, 500);
+// Console log - professional touch
+console.log('Erwan Cadorel - Cybersecurity Portfolio');
+console.log('Ready for internship June 2026');
