@@ -1,5 +1,5 @@
 // ===== ATTENTE CHARGEMENT DOM =====
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
     initSmoothScroll();
     initScrollSpy();
@@ -14,7 +14,7 @@ function initNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Gestion du scroll pour la navbar
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -24,7 +24,7 @@ function initNavigation() {
 
     // Menu mobile toggle
     if (mobileBtn) {
-        mobileBtn.addEventListener('click', function() {
+        mobileBtn.addEventListener('click', function () {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
             document.body.classList.toggle('menu-open');
@@ -33,7 +33,7 @@ function initNavigation() {
 
     // Fermer le menu mobile quand on clique sur un lien
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 mobileBtn.classList.remove('active');
@@ -46,10 +46,10 @@ function initNavigation() {
 // ===== SCROLL FLUIDE =====
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            
+
             if (target) {
                 const headerOffset = 80;
                 const elementPosition = target.offsetTop;
@@ -100,7 +100,7 @@ function initScrollSpy() {
 // ===== ANIMATIONS AU SCROLL (Intersection Observer) =====
 function initScrollAnimations() {
     const elements = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .about-text, .contact-info-card, .availability-card-full');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
