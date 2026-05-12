@@ -74,7 +74,7 @@ function initScrollSpy() {
 
     function updateActiveNav() {
         let current = '';
-        const scrollPosition = window.scrollY + 100; // Offset pour déclencher plus tôt
+        const scrollPosition = window.scrollY + 100;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -94,7 +94,7 @@ function initScrollSpy() {
     }
 
     window.addEventListener('scroll', updateActiveNav);
-    updateActiveNav(); // Initialisation
+    updateActiveNav();
 }
 
 // ===== ANIMATIONS AU SCROLL (Intersection Observer) =====
@@ -105,7 +105,7 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target); // Ne réanime pas après
+                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -117,7 +117,6 @@ function initScrollAnimations() {
 }
 
 // ===== GESTION DES PERFORMANCES =====
-// Lazy loading des images (si vous ajoutez des images plus tard)
 if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(img => {
@@ -125,7 +124,7 @@ if ('loading' in HTMLImageElement.prototype) {
     });
 }
 
-// ===== CONSOLE MESSAGE (pro) =====
+// ===== CONSOLE MESSAGE =====
 console.log(
     '%c🔒 Erwan Cadorel - Portfolio Cybersécurité',
     'font-size: 16px; font-weight: bold; color: #2dd4bf;'
